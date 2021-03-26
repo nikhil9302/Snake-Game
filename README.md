@@ -1,3 +1,4 @@
+# Snake-Game
 ## Inspiration
 There are many inspirations behind this project, this is being my second project, I wanted to make a game again, to better my skills as a game developer. 
 I wanted to implement **canvas** programming through this Famous Game which I loved as a child.
