@@ -1,0 +1,47 @@
+.head{
+    font-size: 45px;
+    text-align: center;
+    color:lawngreen;
+    text-shadow: 2px 2px 5px limegreen;
+}
+.instr{  
+    animation: fadeIn ease 5s;   
+    padding-top: 5px;
+    margin-left: 15px;
+    font-size: 25px;
+    font-family:'Courier New', Courier, monospace;    
+}   
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+body{
+    margin: 0%;
+    background-image: url("http://cdn.lowgif.com/full/87e920924764faaa-sprite-lamp-snake-hill-games.gif");
+    background-size: cover; 
+    color:white;
+}
+#cvs{      
+    text-align: center;
+    padding-bottom: 10px;    
+}
+#stats{ 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+    line-height: 15px; 
+    text-align: left;
+    margin-left: 24%;
+}
+#snakeboard{
+    display:inline;
+    border: chartreuse 10px groove;
+}
+.foot{
+    text-align: center;
+}
+#new,#dif{             
+    font-size: 30px;
+    background-color: orangered;
+    border-radius: 10px;
+}
+
+

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>SnakeGame</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='style.css'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Antic+Slab" >       
+    </head>
+    <body>
+        <div class='head'>Welcome to SnakeGame(Nostalgia Edition)</div>
+        <div class='instr'>
+            Click on arrow keys to direct the snake, eat as many fruits and get a highscore.<br>
+            The NewGame and 2x-Speed button will be visible after the game is over.
+        </div>        
+        <div id='cvs'>
+            <div id='stats'> 
+            <h1 id='score'><img src='images/food.png'> Score: <label id='value'></label></h1>
+            <h2 id='go'>High Score: <label id='hs'></label></h2>            
+            </div> 
+            <canvas id="snakeboard" width="800" height="600"></canvas>
+        </div>
+        <div class='foot'>
+            <button type='button' id='new' onclick="newgame()">New Game</button>
+            <button type='button' id='dif' onclick="inc_diff()">2x-Speed</button>
+        </div>
+        <script language='javascript' src='app.js'></script>
+    </body>
+</html>
