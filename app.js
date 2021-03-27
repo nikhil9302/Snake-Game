@@ -45,13 +45,16 @@ function direction(event) {
   if (key == 37 && dir != "RIGHT") {
     dir = "LEFT";    
     left.play();
-  } else if (key == 38 && dir != "DOWN") {
+  } 
+  else if (key == 38 && dir != "DOWN") {
     dir = "UP";
     up.play();    
-  } else if (key == 39 && dir != "LEFT") {
+  } 
+  else if (key == 39 && dir != "LEFT") {
     dir = "RIGHT";
     right.play();
-  } else if (key == 40 && dir != "UP") {
+  } 
+  else if (key == 40 && dir != "UP") {
     dir = "DOWN";
     down.play();
   }
@@ -86,10 +89,12 @@ function game() {
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
-  if (dir == "LEFT") snakeX -= unit;
-  if (dir == "UP") snakeY -= unit;
-  if (dir == "RIGHT") snakeX += unit;
-  if (dir == "DOWN") snakeY += unit;
+  switch(dir){
+    case "LEFT": snakeX -= unit; break;
+    case "UP": snakeY -= unit; break;
+    case "RIGHT": snakeX += unit; break;
+    case "DOWN": snakeY += unit; break;    
+  } 
 
   if (snakeX == food.x && snakeY == food.y) {
     score++;
@@ -121,6 +126,7 @@ function game() {
     } 
     document.removeEventListener("keydown", direction);   
   }
+
   snake.unshift(newHead);
   document.getElementById('value').innerHTML = score;
 }
@@ -130,11 +136,14 @@ function newgame(){
   snake = [
     { x: 20 * unit, y: 15 * unit },
   ]
+
   food = {
     x: Math.floor(Math.random() * 40) * unit,
     y: Math.floor(Math.random() * 30) * unit
   }
+
   score=0;
+
   document.addEventListener("keydown", direction);
   game();
   rep =setInterval(game,100);
@@ -144,10 +153,12 @@ function inc_diff(){
   snake = [
     { x: 20 * unit, y: 15 * unit },
   ]
+
   food = {
     x: Math.floor(Math.random() * 40) * unit,
     y: Math.floor(Math.random() * 30) * unit
   }
+  
   score=0;
   
   document.addEventListener("keydown", direction);
