@@ -42,6 +42,7 @@ document.addEventListener("keydown", direction);
 function direction(event) {
   let key = event.keyCode;
   event.preventDefault();
+
   if (key == 37 && dir != "RIGHT") {
     dir = "LEFT";    
     left.play();
@@ -78,13 +79,15 @@ game();
 function game() {
   document.getElementById("new").style.visibility="hidden";  
   document.getElementById("dif").style.visibility="hidden";
-  createCanvas();  
+  createCanvas();
+
   for (let i = 0; i < snake.length; i++) {
     ctx.fillStyle = snake_col;
     ctx.strokestyle = snake_bor;
     ctx.fillRect(snake[i].x, snake[i].y, unit, unit);
     ctx.strokeRect(snake[i].x, snake[i].y, unit, unit);
   }
+
   ctx.drawImage(foodImg, food.x, food.y);
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
@@ -130,6 +133,7 @@ function game() {
   snake.unshift(newHead);
   document.getElementById('value').innerHTML = score;
 }
+
 let rep = setInterval(game, 100);
 
 function newgame(){
@@ -158,7 +162,7 @@ function inc_diff(){
     x: Math.floor(Math.random() * 40) * unit,
     y: Math.floor(Math.random() * 30) * unit
   }
-  
+
   score=0;
   
   document.addEventListener("keydown", direction);
